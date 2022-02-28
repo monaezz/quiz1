@@ -10,8 +10,8 @@ Question 1
 After you initialize a new Git repository and create a file named ``my_file.txt``, which of the following commands will not work if issued?
 
 - [ ] git status
-- [ ] git add .
-- [ ] git commit -m "my_file.txt is added"
+- [] git add .
+- [X] git commit -m "my_file.txt is added"
 - [ ] git add my_file.txt
 
 Question 2
@@ -28,7 +28,7 @@ Say you have three changed files (``README.md``, ``my_code.py`` and ``my_page.ht
     1. git add my_page.html
     2. git commit -m "my commit message"
 
-- [ ] execute the following commands:
+- [X] execute the following commands:
 
     1. git add my_page.html
     2. git commit -m "added the file my_page.html"
@@ -40,7 +40,7 @@ Which command should you use to initialize a new Git repository?
 
 - [ ] git bash
 - [ ] git install
-- [ ] git init
+- [x] git init
 - [ ] git start
 
 Question 4
@@ -49,7 +49,7 @@ Question 4
 Which file can you configure to ensure that certain file types are never committed to the local Git repository?
 
 - [ ] ignore.git
-- [ ] .gitignore
+- [x] .gitignore
 - [ ] gitignore.txt
 - [ ] git.ignore
 
@@ -60,7 +60,7 @@ When you run the command ``git branch debugging``, the following will happen:
 
 - [ ] The ``HEAD`` will point to the newly created branch named ``debugging``
 - [ ] Create a new branch named ``debugging`` and you'll see the message: ``Switched to branch 'debugging'``
-- [ ] Create a new branch named ``debugging`` and ``HEAD`` will stay pointing at ``master``   
+- [x] Create a new branch named ``debugging`` and ``HEAD`` will stay pointing at ``master``   
 - [ ] None of the above
 
 
@@ -72,7 +72,7 @@ Consider you start with an **empty** directory and you initialize a git reposito
 
 The commits C<sub>1</sub>, C<sub>2</sub>, ... are numbered in sequence, which means that the commit C<sub>1</sub> came before the commit C<sub>2</sub> and the commit C<sub>3</sub> before C<sub>4</sub>. The commands that were performed to get the to this **exact history** are the following:
 
-- [ ] After ``git init`` and the first commit C<sub>1</sub>:
+- [x] After ``git init`` and the first commit C<sub>1</sub>:
 
       1. git checkout -b debugging
       2. modify  and commit
@@ -132,6 +132,8 @@ You have three files in your working directory: `.gitignore`, `A.txt`, `B.txt` a
 
 Do you think that all the files will be pushed to the remote? Explain why.
 
+No because when typing git add * it does not take the .gitignore because it is a hidden folder.
+
 Question 8
 ----------
 Given the following scenario:
@@ -147,6 +149,8 @@ a---b---c---d  branch 'master' (refers to commit 'd')
 Where will the HEAD point if we run the following command:
 ``git checkout v2.0``
 
+when typing git checkout v2.0 we are going to the branch tagged by v2.0 so the head will point on branch 'b'.
+
 Question 9:
 ----------
 Consider the following scenario:
@@ -156,9 +160,18 @@ Consider the following scenario:
 Explain what will happen when we run the following commands:
 
 1. git checkout experiment
+now we will be in the headless state, and at the C4 commit we will go to the state of the repository 
+
 2. git rebase master
+the history will become leanier, and C4 will be integrated with master with head on C5 and in master
+
 3. git checkout master
+the head will point to C5 and we will be in the master branch
+
+
 4. git merge experiment
+nothing will happen since master was already merged with experiment, and this lead to C5
+
 
 You need to specify where ``HEAD``, ``master`` and ``experiment`` will be after these commands, and you need to sketch theupdated history. You may add a graph as an answer in a folder named as follows: ``firstName_LastName_graphics``.
 
@@ -170,4 +183,5 @@ Suppose the following scenario: in the working directory, everything in up-to-da
 ``git commit -m "added code.py" -a``
 
 Is this correct? Explain why.
+yes since everything is up to date and nothing other than the file code.py was created or changed nothing stops or interrupts this comand.
 
